@@ -1,17 +1,13 @@
 package org.akash.sofvalidator.controller;
 
-import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextInputDialog;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
-
 import java.io.File;
 import org.akash.sofvalidator.service.FileMatchService;
 import org.akash.sofvalidator.service.PdfSofParserService;
 import org.akash.sofvalidator.service.RarExtractorService;
-
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -26,7 +22,7 @@ public class MainController {
     private File sofPdfFile;
     private File rarFile;
 
-    public void uploadSofPdf(ActionEvent actionEvent) {
+    public void uploadSofPdf() {
         FileChooser chooser=new FileChooser();
         chooser.getExtensionFilters().add(
                 new FileChooser.ExtensionFilter("PDF Files","*.pdf")
@@ -42,7 +38,7 @@ public class MainController {
         }
     }
 
-    public void uploadRar(ActionEvent actionEvent) {
+    public void uploadRar() {
         FileChooser chooser=new FileChooser();
         chooser.getExtensionFilters().add(
                 new FileChooser.ExtensionFilter("ZIP Files","*.zip")
@@ -56,7 +52,7 @@ public class MainController {
         }
     }
 
-    public void validateFiles(ActionEvent actionEvent) {
+    public void validateFiles() {
         if(sofPdfFile==null || rarFile==null){
             resultArea.setText("❌ Please upload both SOF PDF and RAR file.");
             return;
@@ -72,11 +68,7 @@ public class MainController {
             RarExtractorService rarService = new RarExtractorService();
             FileMatchService matchService = new FileMatchService();
             List<String> sofFileNames=pdfService.extractInputFileNames(sofPdfFile, extensions);
-//            System.out.println("pdf-->");
-//            for(String st:sofFileNames) System.out.println(st);
             List<String> rarFileNames = rarService.extractFileNames(rarFile);
-//            System.out.println("Zip-->");
-//            for(String st:rarFileNames) System.out.println(st);
             String report = matchService.compare(sofFileNames, rarFileNames);
             resultArea.setText(report);
         }catch (Exception e){

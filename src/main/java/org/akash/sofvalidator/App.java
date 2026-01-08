@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.Objects;
+
 public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
@@ -14,7 +16,7 @@ public class App extends Application {
         );
         Scene scene=new Scene(loader.load(),500,600);
         scene.getStylesheets().add(
-                getClass().getResource("/css/style.css").toExternalForm()
+                Objects.requireNonNull(getClass().getResource("/css/style.css")).toExternalForm()
         );
 
         stage.setTitle("validator");

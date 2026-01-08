@@ -28,10 +28,6 @@
     -fx-background-color: #1565c0;
 }
 
-.button:pressed {
-    -fx-background-color: #0d47a1;
-}
-
 /* TextArea */
 .text-area {
     -fx-font-size: 13px;
@@ -47,9 +43,17 @@
 }
 
 /* ScrollBar styling */
-.scroll-bar:vertical,
-.scroll-bar:horizontal {
+.scroll-bar {
     -fx-background-color: transparent;
+}
+
+.scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #cfd8dc;
+    -fx-background-radius: 6;
 }
 
 .label {

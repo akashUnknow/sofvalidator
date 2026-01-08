@@ -18,13 +18,13 @@
             <!-- SOF PDF row -->
             <HBox spacing="10" alignment="CENTER_LEFT">
                 <Button text="Upload SOF PDF" onAction="#uploadSofPdf"/>
-                <Label fx:id="sofPdfLabel" text=""/>
+                <Label fx:id="sofPdfLabel"/>
             </HBox>
 
             <!-- ZIP row -->
             <HBox spacing="10" alignment="CENTER_LEFT">
                 <Button text="Upload Zip File" onAction="#uploadRar"/>
-                <Label fx:id="zipFileLabel" text=""/>
+                <Label fx:id="zipFileLabel" />
             </HBox>
 
             <!-- Validate -->
