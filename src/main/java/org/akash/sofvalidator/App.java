@@ -13,6 +13,10 @@ public class App extends Application {
                 getClass().getResource("/fxml/main.fxml")
         );
         Scene scene=new Scene(loader.load(),500,600);
+        scene.getStylesheets().add(
+                getClass().getResource("/css/style.css").toExternalForm()
+        );
+
         stage.setTitle("validator");
         stage.setScene(scene);
         stage.show();

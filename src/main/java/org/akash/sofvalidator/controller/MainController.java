@@ -1,6 +1,7 @@
 package org.akash.sofvalidator.controller;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextInputDialog;
 import javafx.stage.FileChooser;
@@ -18,6 +19,8 @@ import java.util.Optional;
 
 public class MainController {
     public TextArea resultArea;
+    public Label zipFileLabel;
+    public Label sofPdfLabel;
 
 
     private File sofPdfFile;
@@ -29,7 +32,14 @@ public class MainController {
                 new FileChooser.ExtensionFilter("PDF Files","*.pdf")
 
         );
-        sofPdfFile = chooser.showOpenDialog(new Stage());
+
+        File file = chooser.showOpenDialog(null);
+        if (file!=null){
+            sofPdfFile=file;
+            sofPdfLabel.setText(file.getName());
+        }else {
+            sofPdfLabel.setText("");
+        }
     }
 
     public void uploadRar(ActionEvent actionEvent) {
@@ -37,7 +47,13 @@ public class MainController {
         chooser.getExtensionFilters().add(
                 new FileChooser.ExtensionFilter("ZIP Files","*.zip")
         );
-        rarFile = chooser.showOpenDialog(new Stage());
+        File file = chooser.showOpenDialog(null);
+        if (file != null) {
+            rarFile = file;
+            zipFileLabel.setText(file.getName());
+        } else {
+            zipFileLabel.setText("");
+        }
     }
 
     public void validateFiles(ActionEvent actionEvent) {

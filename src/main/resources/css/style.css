@@ -1,0 +1,58 @@
+/* Root styling */
+.root {
+    -fx-font-family: "Segoe UI", "Arial";
+    -fx-background-color: #f5f7fa;
+}
+
+/* Top VBox container */
+.vbox {
+    -fx-spacing: 12;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dcdcdc;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #1976d2;
+    -fx-text-fill: white;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 10 10 5;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+
+}
+
+.button:hover {
+    -fx-background-color: #1565c0;
+}
+
+.button:pressed {
+    -fx-background-color: #0d47a1;
+}
+
+/* TextArea */
+.text-area {
+    -fx-font-size: 13px;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: #cfd8dc;
+    -fx-border-width: 1;
+}
+
+.text-area .content {
+    -fx-background-color: #ffffff;
+    -fx-padding: 10;
+}
+
+/* ScrollBar styling */
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.label {
+    -fx-text-fill: #666;
+    -fx-font-size: 12px;
+}

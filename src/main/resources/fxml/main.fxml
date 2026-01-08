@@ -1,24 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.geometry.Insets?>
-<BorderPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.akash.sofvalidator.controller.MainController"
-            prefHeight="400.0" prefWidth="600.0">
+<BorderPane prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.akash.sofvalidator.controller.MainController">
 
     <top>
-        <VBox>
-                <padding>
-                    <Insets top="10" right="10" bottom="10" left="10"/>
-                </padding>
-            <Button text="Upload SOF PDF" onAction="#uploadSofPdf"/>
-            <Button text="Upload RAR File" onAction="#uploadRar"/>
+        <VBox spacing="10" prefWidth="600.0">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <!-- SOF PDF row -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Button text="Upload SOF PDF" onAction="#uploadSofPdf"/>
+                <Label fx:id="sofPdfLabel" text=""/>
+            </HBox>
+
+            <!-- ZIP row -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Button text="Upload Zip File" onAction="#uploadRar"/>
+                <Label fx:id="zipFileLabel" text=""/>
+            </HBox>
+
+            <!-- Validate -->
             <Button text="Validate Files" onAction="#validateFiles"/>
         </VBox>
     </top>
